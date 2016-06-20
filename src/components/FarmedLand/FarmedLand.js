@@ -17,7 +17,9 @@ export const FarmedLand = (props) => {
 if (props.countyData.length > 0) {let thisCropInThisCounty = props.countyData.filter( (d) =>{
   return props.selectedCrop === d.commodity
 })
-acresOfThisCropInThisCounty = thisCropInThisCounty[0].harvested_acres
+
+if(thisCropInThisCounty[0] !==undefined){
+acresOfThisCropInThisCounty = thisCropInThisCounty[0].harvested_acres}
 }
 let dataset = []
 if (totalAcresInThisCounty > 0){ dataset = [{commodity: 'total', harvested_acres: totalAcresInThisCounty}, {commodity: `${props.selectedCrop}`, harvested_acres: acresOfThisCropInThisCounty}]}

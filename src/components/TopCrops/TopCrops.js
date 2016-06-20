@@ -85,7 +85,7 @@ if (listOfThisYearCropsWithRevenue.length > 2) {
         </div>
         <div className="col-md-12" style={infoRow}>
               <div className="col-md-6">
-              <HorizontalBarChart matchingCrop={selectedCropRevenueData} countyName={props.selectedCounty} countyData={revenueTop5} xMetric="cropRevenue" chartTitle={`Top 5 crops by revenue in thousands of dollars in ${props.selectedYear}`}/>
+              <HorizontalBarChart matchingCrop={selectedCropRevenueData} countyName={props.selectedCounty} countyData={revenueTop5} xMetric="cropRevenue" chartTitle={`Top 5 crops by revenue in ${props.selectedYear}`}/>
               </div>
               <div className="col-md-6">
               <Words title="Revenue vs Harvested Acres">
