@@ -41,7 +41,7 @@ class SideMenu extends React.Component{
         let showCountyStyles = {marginTop: `${val.x}%`, zIndex: "10", display: "block", opacity: ".8",  minHeight: "50%", borderRadius: "10px", textAlign: "center",left:"2%", position: "fixed", background: "#5EAA00", color: "white"}
         return <div className={`col-sm-${showMenus.cropMenu && menuType === "crop" ? "8" : "3"} col-xs-5`} style={showMenus.cropMenu && menuType === "crop" ? showCropStyles : showCountyStyles}> <h3 style={{color:"white"}}><img src={`../../icons/crop-header-icons-off-white/${iconName}.png`}/> Choose a {menuType}</h3> {menuType === "county" ?  <div>
                     <form>
-                    Year (between 1975 and 20112):
+                    Year (between 1975 and 2012):
                     <input style={{color: "black"}} onChange={this.handleYearChange.bind(this)} type="number" name="quantity" min="1976" max="2012" />
                       </form>
                 {countyNodes}
