@@ -109,7 +109,7 @@ class HomeView extends React.Component {
     let { putOneCropInState, putOneCountyInState, handleOffMenu,  fetchDiversityList, diversityList, top5Exports,
       putCountyCommodityAcreDataInState, handleShowCropMenu, handleShowCountyMenu, exportCrop, showHugeCropList,
        showMenus, selectedCrop, countyData, selectedCounty, cropList, handleExportClick, handleShowHugeCropList,
-       changeYear, selectedYear, cropData, countyList, sortMapBy, sortMapByChange, exportsHistory, allPossibleCrops } = this.props
+       changeYear, selectedYear, cropData, countyList, sortMapBy, sortMapByChange, exportsHistory, allPossibleCrops, revenue, addRevenue } = this.props
 
 
 
@@ -163,6 +163,14 @@ class HomeView extends React.Component {
                                 }
                                 this.props.putCropListInState(nonRepeated)
                                 })
+      /*    d3.json(`http://api.cropcompass.org:8000/data/subsidy_dollars/?county=${thing.name}&year=${selectedYear}`, (d) =>
+                        {
+                                  let rawData = d.data.sort(function(a, b) {
+                                    return b.revenue - a.revenue;
+                                    })
+                                this.props.addRevenue(rawData)
+                              })*/
+
 
                   }
 
@@ -230,7 +238,8 @@ const mapStateToProps = (state) => {
         exportCrop: state.exportCrop,
         showHugeCropList: state.showHugeCropList,
         diversityList: state.diversityList,
-        top5Exports: state.top5Exports
+        top5Exports: state.top5Exports,
+        revenue: state.revenue
         }
 }
 
@@ -309,6 +318,10 @@ const fetchAllPossibleCrops = (cropList) => {
 
 }
 
+const addRevenue  = (revenueList) => {
+  return {type:"ADD_REVENUE", payload: revenueList}
+
+}
 const changeYear = (newYear) => {
 	return {type:"CHANGE_YEAR", payload: newYear}
 }
@@ -333,6 +346,7 @@ export default connect(mapStateToProps,
           handleShowHugeCropList,
           fetchDiversityList,
           fetchTop5Exports,
+          addRevenue,
           putOneCropInState})(HomeView)
 
 /*

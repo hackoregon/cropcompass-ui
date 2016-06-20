@@ -51,6 +51,7 @@ let initialState = {
     exportCrop: "",
     top5Exports: [],
     diversityList: [],
+    revenue: [],
     showMenus: {cropMenu: false, countyMenu: false},
     allPossibleCrops: [],
     showHugeCropList: false,

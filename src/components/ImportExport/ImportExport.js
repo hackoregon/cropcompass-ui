@@ -33,6 +33,10 @@ export default class ImportExport extends React.Component{
     let {handleShowHugeCropList, showHugeCropList} = this.props
     let hiddenStyle = {display: 'none'}
     let shownStyle = {display: 'block'}
+    let top5Exports = this.props.top5Exports.map( (d,i) => {
+      return {acres: d[0], commodity: d[1]}
+    })
+    console.log(top5Exports)
     return (
       <div className="row" style={paddingBorders}>
         <div className="row">
@@ -41,7 +45,7 @@ export default class ImportExport extends React.Component{
         <div style={infoRow} className="row">
         <div className="col-md-9">
             <div className="col-md-12">
-            <HorizontalBarChart countyName={this.props.selectedCounty}  countyData={this.props.countyData} chartTitle={`Crop Exports`}/>
+            <HorizontalBarChart countyName={this.props.selectedCounty} countyData={top5Exports} xMetric="acres" chartTitle={`Top 5 crop exports in Oregon in 2016`}/>
             </div>
           <div className="col-md-9">
             <div className="row">

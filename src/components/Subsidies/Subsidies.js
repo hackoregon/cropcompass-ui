@@ -54,6 +54,7 @@ export const Subsidies = (props) => {
         <div className="row" style={paddingBorders}>
           <div className="row">
             <h1>{props.selectedCounty} Subsidies in {props.selectedYear}</h1>
+            <h3>(data available from 2003 to 2012)</h3>
             <h4>Generally, crop subsidies are {subsidyLevel} here compared to other counties in Oregon.</h4>
           </div>
           <br/>

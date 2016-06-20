@@ -46,7 +46,7 @@ export const TopCrops = (props) => {
         </div>
       <div className="col-md-12" style={infoRow}>
             <div className="col-md-6">
-            <HorizontalBarChart matchingCrop={selectedCropAcreData} countyName={props.selectedCounty} countyData={commoditiesByAcre} xMetric="acres" chartTitle={`Top crops by acreage in (**most recent year, usually 2012??**)`}/>
+            <HorizontalBarChart matchingCrop={selectedCropAcreData} countyName={props.selectedCounty} countyData={commoditiesByAcre} xMetric="acres" chartTitle={`Top crops by acreage in 2012`}/>
             </div>
             <div className="col-md-6">
             <HorizontalBarChart matchingCrop={selectedCropHarvestData} countyName={props.selectedCounty} countyData={commoditiesByHarvestThisYear} xMetric="harvested_acres" chartTitle={`Top crops by harvested acres in ${props.selectedYear}`}/>
