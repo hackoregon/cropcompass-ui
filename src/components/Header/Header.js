@@ -26,7 +26,7 @@ class Header extends React.Component {
     }
 
     render(){
-    let { cropImageName, cycleThrough, toggleCycleFlag, cycleFlag, selectedCounty, handleOffMenu } = this.props
+    let { cropImageName, cycleThrough, toggleCycleFlag, cycleFlag, selectedCounty, handleOffMenu, selectedYear } = this.props
     const cropName = this.props.cropName || ""
     return (
       <div>
@@ -37,7 +37,7 @@ class Header extends React.Component {
             </Link>
           </div>
 
-          <h3 style={{flex: "2"}}><strong>Viewing</strong>: {cropName} in {selectedCounty}</h3>
+          <h3 style={{flex: "2"}}><strong>Viewing</strong>: {cropName} in {selectedCounty} in {selectedYear}</h3>
           <nav>
             <ul>
               <li onClick={this.triggerCountyMenuShow.bind(this)}><a>

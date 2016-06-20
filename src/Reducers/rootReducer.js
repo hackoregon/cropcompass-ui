@@ -20,6 +20,17 @@ const showJournalism = (state = false, action) => {
     }
 }
 
+
+const showSources = (state = false, action) => {
+    switch(action.type) {
+      case 'TOGGLE_SHOW_SOURCES':
+        return !state
+      default:
+        return state
+    }
+}
+
+
 const cropName = (state = "", action) => {
     switch(action.type) {
       case 'SELECT_CROP':
@@ -124,6 +135,15 @@ const cropList = (state = [], action) => {
     }
 }
 
+const revenue = (state = [], action) => {
+    switch(action.type) {
+      case 'ADD_REVENUE':
+        return action.payload
+      default:
+        return state
+    }
+}
+
 
 const countyList = (state = [], action) => {
     switch(action.type) {
@@ -148,22 +168,12 @@ const diversityList = (state = [], action) => {
 const top5Exports = (state = [], action) => {
     switch(action.type) {
       case 'FETCH_TOP_5_EXPORTS':
+      console.log(action.payload)
         return action.payload
       default:
         return state
     }
 }
-
-
-const revenue = (state = [], action) => {
-    switch(action.type) {
-      case 'ADD_REVENUE':
-        return action.payload
-      default:
-        return state
-    }
-}
-
 
 const cycleFlag = (state = "", action) => {
     switch(action.type) {
@@ -215,8 +225,10 @@ const showMenus = (state = {cropMenu: false, countyMenu: false}, action) => {
 }
 
 const CropCompassReducer = combineReducers({
-  countyName, countyList, cropName, countyData, cropImageName, allPossibleCrops, exportCrop, diversityList, revenue,
-  cycleFlag, cropList, sortMapBy, showMenus, selectedYear, showJournalism, exportsHistory, showHugeCropList, top5Exports
+  countyName, countyList, cropName, countyData, cropImageName,
+  allPossibleCrops, exportCrop, diversityList, revenue, showSources,
+  cycleFlag, cropList, sortMapBy, showMenus, selectedYear, showJournalism,
+  exportsHistory, showHugeCropList, top5Exports
 })
 
 export default CropCompassReducer

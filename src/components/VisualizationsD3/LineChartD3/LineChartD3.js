@@ -8,7 +8,6 @@ export default class LineChartD3 extends React.Component {
       return {x: d[xMetric], y: d[yMetric]}
     })
 
-    console.table(dataset)
     let margin = {
             top: 30,
             right: 100,
