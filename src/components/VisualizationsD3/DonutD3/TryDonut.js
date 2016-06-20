@@ -13,37 +13,37 @@ export default class DonutD3 extends React.Component{
       var pie = d3.layout.pie()
         .sort(null)
         .value(function(d) {
-          return d.acres;
+          return d.harvested_acres;
         });
 
   let circleNodes = pie(dataset).map( (d, index) => {
     let arcCalc = arc(d)
-    let colorValues = ["rgb(82,59,3)", "rgb(222,222,206)"]
+    let colorValues = ["rgb(82,59,3)", "rgb(188, 202, 48)"]
     let pathStyle = {fill: colorValues[index]}
 
     return (
 
-      <div key={d.acres + index} style={{textAlign: "center"}}>
+      <div key={d.harvested_acres + index} style={{textAlign: "center"}}>
         <svg class="organicDonut" width={width} height={height}>
 
-        <text fontSize="22" x={width * .1} y={height * .25}>
-        {dataset[0].commodity}
+        <text fontSize="20" x={width * .1} y={height * .25}>
+        total acres:
           </text>
 
-          <text fontSize="22" x={width * .1} y={height * .35}>
-          {dataset[0].acres} acres
+          <text fontSize="20" x={width * .1} y={height * .35}>
+          {dataset[0].harvested_acres}
             </text>
 
-          <text fontSize="22" x={width * .8} y={height * .25}>
+          <text fontSize="20" x={width * .8} y={height * .25}>
               {dataset[1].commodity}
             </text>
-          <text fontSize="22" x={width * .8} y={height * .35}>
-                {dataset[1].acres} acres
+          <text fontSize="20" x={width * .8} y={height * .35}>
+                {dataset[1].harvested_acres} acres <br/> of {dataset[1].commodity}
             </text>
         <image xlinkHref="../../icons/leaf-brown3x.png" x={width * .4} y={width * .13} width={width * .23} height={height * .44}>
         </image>
             <g transform={`translate(${width/2},${height/2})`}>
-              <g key={d.acres + index} className="arc">
+              <g key={d.harvested_acres + index} className="arc">
                     <path key={d+index} d={arcCalc} style={pathStyle}>
                     </path>
               </g>

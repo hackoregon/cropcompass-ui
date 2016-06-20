@@ -17,7 +17,7 @@ export default class HorizontalBarChart extends React.Component {
     let height = (width * .66);
     let xMetric = this.props.xMetric
     let { putCountyDataInState } = this.props
-    let colorScale = ["#5EAA00", "#87B725", "#A1C02A", "#BCCA30", "#E1D837", "#5EAA00"]
+    let colorScale = ["#5EAA00", "#87B725", "#A1C02A", "#BCCA30", "#E1D837", "orange"]
         let dataset = this.props.countyData.slice(0,5)
         if(this.props.matchingCrop !== undefined){
           dataset.push(this.props.matchingCrop)

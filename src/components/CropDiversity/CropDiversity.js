@@ -59,7 +59,6 @@ export const CropDiversity = (props) => {
 
   let thisCountyDiversity = ''
   let averageScore =''
-  console.log(props.diversityList)
   if (props.diversityList.data !== undefined){
     thisCountyDiversity = props.diversityList.data[0][props.selectedCounty].toFixed(2)
     averageScore = props.diversityList.average_diversity_score.toFixed(2)

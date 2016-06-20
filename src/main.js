@@ -49,6 +49,7 @@ let initialState = {
     cropImageName: "hazelnut",
     cycleFlag: false,
     exportCrop: "",
+    showSources: false,
     top5Exports: [],
     diversityList: [],
     revenue: [],
