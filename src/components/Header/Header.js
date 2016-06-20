@@ -30,22 +30,20 @@ class Header extends React.Component {
     const cropName = this.props.cropName || ""
     return (
       <div>
-        <header style={{zIndex: "6", height: "17%", minHeight:"100px", position: "fixed"}} >
-          <div className="logo" style={{flex: 10}}>
-            <Link to='/'><img src="../../CC-logo.png" alt="CropCompass logo" width="160" height="80" /></Link>
-
-
+        <header style={{zIndex: "6", height: "17%", minHeight:"100px", position: "fixed", justifyContent: "center", alignItems: "center"}} >
+          <div className="logo" style={{flex: "2"}}>
+            <Link to='/'>
+              <img src="../../CC-logo.png" alt="CropCompass logo" width="160" height="80" />
+            </Link>
           </div>
 
-
-
+          <h3 style={{flex: "2"}}><strong>Viewing</strong>: {cropName} in {selectedCounty}</h3>
           <nav>
             <ul>
               <li onClick={this.triggerCountyMenuShow.bind(this)}><a>
                 <img src="../../icons/crop-header-icons-off-white/location-iconx2.png" alt="Location Icon" width="23" height="30" style={{marginTop: "4px"}}/>
                 <p style={{marginTop: "14px"}}>Choose County</p>
               </a></li>
-
               <li onClick={this.triggerCropMenuShow.bind(this)}><a>
                 <img onMouseEnter={this.triggerToggleCycleFlag.bind(this)} onMouseLeave={this.triggerToggleCycleFlag.bind(this)}
                 src={`../../icons/crop-header-icons-off-white/crop-${cropImageName}2x.png`}
