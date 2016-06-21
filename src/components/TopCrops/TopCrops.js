@@ -89,8 +89,6 @@ if (listOfThisYearCropsWithRevenue.length > 2) {
               </div>
               <div className="col-md-6">
               <Words title="Revenue vs Harvested Acres">
-              Turnip greens yarrow ricebean rutabaga endive cauliflower sea lettuce kohlrabi amaranth water spinach avocado daikon napa cabbage asparagus winter purslane kale. Celery potato scallion desert raisin horseradish spinach carrot soko. Lotus root water spinach fennel kombu maize bamboo shoot green bean swiss chard seakale pumpkin onion chickpea gram corn pea. Brussels sprout coriander water chestnut gourd swiss chard wakame kohlrabi beetroot carrot watercress. Corn amaranth salsify bunya nuts nori azuki bean chickweed potato bell pepper artichoke.
-              <br/>
               Oregon farms earn an average of $1,882 per acre. The graphs below show top 5 crops by revenue and acres harvested, with selected crop at the bottom for comparison.
               </Words>
               </div>

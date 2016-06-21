@@ -58,7 +58,7 @@ if (totalAcresInThisCounty > 0){ dataset = [{commodity: 'total', harvested_acres
             <div className="col-md-6 text-center">
             <h3>Of {totalAcresInThisCounty} acres of harvested crops</h3>
             <h3>in {props.selectedCounty} in {props.selectedYear} </h3>
-            <h3> {acresOfThisCropInThisCounty} were {props.selectedCrop}</h3>
+            <h3> {acresOfThisCropInThisCounty || "zero"} were {props.selectedCrop}</h3>
 
             </div>
           </div>

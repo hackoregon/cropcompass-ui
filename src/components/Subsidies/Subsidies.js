@@ -66,8 +66,7 @@ export const Subsidies = (props) => {
 
           <br/>
               <Words title="Why do subsidies matter?">
-              Turnip greens yarrow ricebean rutabaga endive cauliflower sea lettuce kohlrabi amaranth water spinach avocado daikon napa cabbage asparagus winter purslane kale. Celery potato scallion desert raisin horseradish spinach carrot soko. Lotus root water spinach fennel kombu maize bamboo shoot green bean swiss chard seakale pumpkin onion chickpea gram corn pea. Brussels sprout coriander water chestnut gourd swiss chard wakame kohlrabi beetroot carrot watercress. Corn amaranth salsify bunya nuts nori azuki bean chickweed potato bell pepper artichoke.
-              </Words>
+The US spends about $20 billion a year on agricultural subsidies. These subsidies bring stability to our food systems which are dependent on inherently unstable weather. They also provide economic incentives for producers and consumers. However, they can also discourage crop diversity and discourage innovating new practices to adapt to climate change.              </Words>
             </div>
             <div className="col-md-4">
               <HorizontalBarChart countyName={props.selectedCounty} countyData={subsidies} xMetric="subsidy_dollars" chartTitle={`Most subsidized crops in ${props.selectedCounty}`}/>
