@@ -38,7 +38,7 @@ export default class DonutD3 extends React.Component{
               {dataset[1].commodity}
             </text>
           <text fontSize="20" x={width * .8} y={height * .35}>
-                {dataset[1].harvested_acres} acres <br/> of {dataset[1].commodity}
+                {dataset[1].harvested_acres} acres <br/>
             </text>
         <image xlinkHref="../../icons/leaf-brown3x.png" x={width * .4} y={width * .13} width={width * .23} height={height * .44}>
         </image>

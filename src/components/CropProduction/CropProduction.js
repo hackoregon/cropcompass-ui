@@ -100,8 +100,7 @@ export const CropProduction = (props) => {
             </div>
             <div className="col-md-3">
               <Words title="Crop Production and Environment">
-              Turnip greens yarrow ricebean rutabaga endive cauliflower sea lettuce kohlrabi amaranth water spinach avocado daikon napa cabbage asparagus winter purslane kale. Celery potato scallion desert raisin horseradish spinach carrot soko. Lotus root water spinach fennel kombu maize bamboo shoot green bean swiss chard seakale pumpkin onion chickpea gram corn pea. Brussels sprout coriander water chestnut gourd swiss chard wakame kohlrabi beetroot carrot watercress. Corn amaranth salsify bunya nuts nori azuki bean chickweed potato bell pepper artichoke.
-              </Words>
+              States in the Northwest receive 3 percent of total US subsidies. This section shows the variation in subsides for {props.selectedCrop} in {props.selectedCounty}. The Agriculture Census is conducted every 5 years and while it tracks data back to the late 1800's, 1976 through 2012 is the time period with the most consistent data for comparison over all crops and counties.              </Words>
             </div>
         </div> : <h1>Since 1976, {props.selectedCounty} has had no recorded production of {props.selectedCrop.toLowerCase()}</h1>
       }

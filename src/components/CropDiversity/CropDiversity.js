@@ -75,8 +75,12 @@ export const CropDiversity = (props) => {
           <div className="row" style={infoRow}>
             <div className="col-md-7">
               <Words title="Why does diversity matter?">
-              Turnip greens yarrow ricebean rutabaga endive cauliflower sea lettuce kohlrabi amaranth water spinach avocado daikon napa cabbage asparagus winter purslane kale. Celery potato scallion desert raisin horseradish spinach carrot soko. Lotus root water spinach fennel kombu maize bamboo shoot green bean swiss chard seakale pumpkin onion chickpea gram corn pea. Brussels sprout coriander water chestnut gourd swiss chard wakame kohlrabi beetroot carrot watercress. Corn amaranth salsify bunya nuts nori azuki bean chickweed potato bell pepper artichoke.
-              </Words>
+              From the Union of Concerned Scientists:
+              <br/>
+
+              "Growing a greater diversity of crops would allow farmers to reap the environmental and energy advantages of longer, more complex crop rotations. Recent research has demonstrated that multi-year, multi-crop rotations produce high yields for each crop in the rotation, control pests and weeds with less reliance on chemical pesticides, and enhance soil fertility with less need for synthetic fertilizers."
+                <br/>
+              This graph shows “effective number of crops” grown in a county. It takes into account not just the number of crops grown, but also the proportion of land for each crop. If most of the farmland is a monoculture, than the effective number of crops will be one. Higher numbers indicate more diversity of crops planted on the farmed land in the selected region.              </Words>
             </div>
             <div className="col-md-5">
                 <h3 style={{marginLeft: "2em"}}>Crop Diversity in {props.selectedCounty}</h3>

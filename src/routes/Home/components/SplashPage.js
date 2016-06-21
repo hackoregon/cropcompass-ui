@@ -41,25 +41,29 @@ We're using open data to bring transparency to the factors that shape our food s
 
         				<Modal show={showJournalism} bsSize="large" aria-labelledby="contained-modal-title-lg">
         			<Modal.Header>
-        				<Modal.Title id="contained-modal-title-lg">A story for you!</Modal.Title>
+        				<Modal.Title id="contained-modal-title-lg"><h2>Farm-to-Table. If only it were that simple.</h2>
+</Modal.Title>
         			</Modal.Header>
         			<Modal.Body>
-              <p>Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.</p>
 
-              <p>Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.</p>
 
-              <p>Turnip greens yarrow ricebean rutabaga endive cauliflower sea lettuce kohlrabi amaranth water spinach avocado daikon napa cabbage asparagus winter purslane kale. Celery potato scallion desert raisin horseradish spinach carrot soko. Lotus root water spinach fennel kombu maize bamboo shoot green bean swiss chard seakale pumpkin onion chickpea gram corn pea. Brussels sprout coriander water chestnut gourd swiss chard wakame kohlrabi beetroot carrot watercress. Corn amaranth salsify bunya nuts nori azuki bean chickweed potato bell pepper artichoke.</p>
+              <p>The journey our food takes from where it's grown to where it's consumed can be long and complex -- and difficult for consumers to unearth. This is no longer good enough. Consumers increasingly demand transparency.1 We want to know not just where our food is grown, but how. Not just how it's processed, but by whom. Behind this demand is a growing interest in real food, grown responsibly, and distributed locally. </p>
 
-              <p>Nori grape silver beet broccoli kombu beet greens fava bean potato quandong celery. Bunya nuts black-eyed pea prairie turnip leek lentil turnip greens parsnip. Sea lettuce lettuce water chestnut eggplant winter purslane fennel azuki bean earthnut pea sierra leone bologi leek soko chicory celtuce parsley jÃ­cama salsify.</p>
+              <p>This push for transparency has the potential to upend the way food systems work. One opportunity ripe for such disruption is in the middle of the market: regional, differentiated, mid-sized producers.2</p>
 
-              <p>Celery quandong swiss chard chicory earthnut pea potato. Salsify taro catsear garlic gram celery bitterleaf wattle seed collard greens nori. Grape wattle seed kombu beetroot horseradish carrot squash brussels sprout chard.</p>
+              <p>Over time, the rich, diverse, and fertile lands of the Pacific Northwest has moved toward commodity crops.3 But champions of a different model are emerging. Jeff Harvey, CEO of Burgerville states, “as consumers we’ll end up with less choice and potentially less healthy food” if we continue to grow for a commodity market. But Harvey’s vision of Oregon Agriculture remains positive. Because in his experience, with data and greater transparency the solutions that support a regional food system will become evident.</p>
 
-              <p>Pea horseradish azuki bean lettuce avocado asparagus okra. Kohlrabi radish okra azuki bean corn fava bean mustard tigernut jÃ­cama green bean celtuce collard greens avocado quandong fennel gumbo black-eyed pea. Grape silver beet watercress potato tigernut corn groundnut. Chickweed okra pea winter purslane coriander yarrow sweet pepper radish garlic brussels sprout groundnut summer purslane earthnut pea tomato spring onion azuki bean gourd. Gumbo kakadu plum komatsuna black-eyed pea green bean zucchini gourd winter purslane silver beet rock melon radish asparagus spinach.</p>
+              <p>The middle market strategy requires intelligence -- for producers and consumers -- about what we grow, where, why, how, and where new opportunities lie. That's where HackOregon's Crop Compass comes in.</p>
 
-              <p>Beetroot water spinach okra water chestnut ricebean pea catsear courgette summer purslane. Water spinach arugula pea tatsoi aubergine spring onion bush tomato kale radicchio turnip chicory salsify pea sprouts fava bean. Dandelion zucchini burdock yarrow chickpea dandelion sorrel courgette turnip greens tigernut soybean radish artichoke wattle seed endive groundnut broccoli arugula.</p>
+              <p>Although much remains to be done, our aim is to empower decision makers at all levels by making agricultural data about crops, yields, and patterns easy to understand, and actionable -- for the first time. We think this matters and suspect you will too.</p>
 
-              <p>Soko radicchio bunya nuts gram dulse silver beet parsnip napa cabbage lotus root sea lettuce brussels sprout cabbage. Catsear cauliflower garbanzo yarrow salsify chicory garlic bell pepper napa cabbage lettuce tomato kale arugula melon sierra leone bologi rutabaga tigernut. Sea lettuce gumbo grape kale kombu cauliflower salsify kohlrabi okra sea lettuce broccoli celery lotus root carrot winter purslane turnip greens garlic. JÃ­cama garlic courgette coriander radicchio plantain scallion cauliflower fava bean desert raisin spring onion chicory bunya nuts. Sea lettuce water spinach gram fava bean leek dandelion silver beet eggplant bush tomato.</p>
-                            <span onClick={toggleJournalism}><Link to='data'>are you ready for data?</Link></span>
+              <span onClick={toggleJournalism}><Link to='data'>Dig into the data</Link></span>
+
+              <h6>
+              1(source: “A Clear View of Transparency and How it Builds Trust” CFI 2015 Report http://www.foodintegrity.org/)
+              2 (source: Capital Press, http://www.capitalpress.com/Oregon/20150630/reit-purchases-6000-acres-of-willamette-valley-farmland)
+              3. 4 (source: Crop Compass interviews, May 2016)
+              </h6>
 
         			</Modal.Body>
         			<Modal.Footer>

@@ -57,13 +57,10 @@ export default class ImportExport extends React.Component{
 
           <div className="col-md-3">
             <h3>Imports & Exports</h3>
-
-
-              <p>Nullam eros mi, mollis in sollicitudin non, tincidunt sed enim. Sed et felis metus, rhoncus ornare nibh. Ut at magna leo. Suspendisse egestas est ac dolor imperdiet pretium. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam porttitor, erat sit amet venenatis luctus, augue libero ultrices quam, ut congue nisi risus eu purus. Cras semper consectetur elementum. Nulla vel aliquet libero. Vestibulum eget felis nec purus commodo convallis. Aliquam erat volutpat.  </p>
-
-              <p>In facilisis scelerisque dui vel dignissim. Sed nunc orci, ultricies congue vehicula quis, facilisis a orci. In aliquet facilisis condimentum. Donec at orci orci, a dictum justo. Sed a nunc non lectus fringilla suscipit. Vivamus pretium sapien sit amet mauris aliquet eleifend vel vitae arcu. Fusce pharetra dignissim nisl egestas pretium.  </p>
-
               <p>Oregon exports agricultural products all over the world. 40% of products grown in Oregon are exported internationally. This graph shows the top 5 commodity agricultural products exported from Oregon.</p>
+              <p>Oregon exports agricultural products all over the world. 40% of products grown in Oregon are exported internationally. This graph shows the top 5 commodity agricultural products exported from Oregon.</p>
+              <p>Oregon exports agricultural products all over the world. 40% of products grown in Oregon are exported internationally. This graph shows the top 5 commodity agricultural products exported from Oregon.</p>
+
               <div onClick={handleShowHugeCropList.bind(this)}> Click here to <span style={{fontSize:"2em"}}>{showHugeCropList ? 'hide' : 'see'}</span> our huge, clickable list of all {this.props.allPossibleCrops.length} Oregon exports</div>
               <div onClick={handleShowSources.bind(this)}> Or click to learn more about data sources for this project.</div>
 
