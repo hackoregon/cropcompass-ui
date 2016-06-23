@@ -4,7 +4,7 @@ import d3 from 'd3';
       var width = 1000;
       var height = 500;
       var countyName = "Multnomah"
-      d3.json("http://api.cropcompass.org/data/nass_commodity_area?region=" + countyName, function(d) {
+      d3.json("http://ec2-54-149-118-93.us-west-2.compute.amazonaws.com/data/nass_commodity_area?region=" + countyName, function(d) {
           d.data.sort(function(a, b) {
               return b.acres - a.acres;
           });
