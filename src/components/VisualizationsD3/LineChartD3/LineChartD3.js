@@ -158,9 +158,9 @@ export default class LineChartD3 extends React.Component {
       return(
       <div key={"tip" + arrayOfThisKey[index]} class="d3-tip n" id={"tip" + arrayOfThisKey[index]}
                         style={{color: "white", fontWeight: "200", fontSize:"1.4em", background: "#D6CD1E",
-                        border: "solid black 1px", padding: "15px", borderRadius: "80%", position: 'absolute',
-                        opacity: '0', pointerEvents: 'none', minHeight: "10px", top: `${topPosition + 1900}px`, left: `${leftPosition + 200}px`}}>
-        {d.y}
+                        border: "solid white 1px", padding: "15px", position: 'absolute',
+                        opacity: '0', pointerEvents: 'none', minHeight: "10px", top: `${topPosition + 50}px`, left: `${leftPosition + 30}px`}}>
+        {d.y} {yMetric === 'harvested_acres' ? 'harvested acres' : 'dollars'}
       </div>
       )
     })
