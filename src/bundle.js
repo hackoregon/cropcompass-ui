@@ -29907,7 +29907,7 @@
 	    value: function componentDidMount() {
 	      var _this2 = this;
 
-	      d3.json('http://api.cropcompass.org:8000/table/commodity_area/?county=Multnomah', function (d) {
+	      d3.json('http://ec2-54-149-118-93.us-west-2.compute.amazonaws.com:8000/table/commodity_area/?county=Multnomah', function (d) {
 	        console.log(d);
 	        var rawData = d.data.sort(function (a, b) {
 	          return b.acres - a.acres;
@@ -29915,7 +29915,7 @@
 	        _this2.props.putCountyDataInState(rawData);
 	      });
 
-	      d3.json('http://api.cropcompass.org:8000/data/commodity_area/', function (d) {
+	      d3.json('http://ec2-54-149-118-93.us-west-2.compute.amazonaws.com:8000/data/commodity_area/', function (d) {
 	        console.log(d);
 	        var rawData = d.data.map(function (item) {
 	          return item.commodity;
@@ -29955,7 +29955,7 @@
 
 	      var handleCountySelect = function handleCountySelect(thing) {
 	        _this3.props.putOneCountyInState({ name: thing.name, fips: thing.fips });
-	        d3.json('http://api.cropcompass.org:8000/table/commodity_area/?county=' + thing.name, function (d) {
+	        d3.json('http://ec2-54-149-118-93.us-west-2.compute.amazonaws.com:8000/table/commodity_area/?county=' + thing.name, function (d) {
 	          var rawData = d.data.sort(function (a, b) {
 	            return b.acres - a.acres;
 	          });

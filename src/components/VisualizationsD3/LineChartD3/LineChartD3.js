@@ -30,21 +30,27 @@ export default class LineChartD3 extends React.Component {
         .domain([0, yMax])
         .range([height, 0]);
 
-    let xAxisFunction = d3.svg.axis()
-        .scale(xScale)
-        .orient("bottom")
-        .innerTickSize(-height)
-        .outerTickSize(0)
-        .tickPadding(10)
-        .ticks(33)
-        .tickFormat(d3.format("d"));
+    var xnode  = this.refs.xaxis;
+    var xaxis = d3.svg.axis()
+    .scale(xScale)
+    .orient("bottom")
+    .innerTickSize(-height)
+    .outerTickSize(0)
+    .tickPadding(10)
+    .ticks(33)
+    .tickFormat(d3.format("d"));
+    d3.select(xnode).call(xaxis);
 
-    let yAxisFunction = d3.svg.axis()
-        .scale(yScale)
-        .orient("left")
-        .innerTickSize(-width)
-        .outerTickSize(0)
-        .tickPadding(10);
+
+
+    var ynode  = this.refs.yaxis;
+    var yaxis = d3.svg.axis()
+    .scale(yScale)
+    .orient("left")
+    .innerTickSize(-width)
+    .outerTickSize(0)
+    .tickPadding(10);
+    d3.select(ynode).call(yaxis);
 
 
       var svg = d3.select(`#mySVG${this.props.title.length}`).append("svg")
@@ -53,36 +59,29 @@ export default class LineChartD3 extends React.Component {
                     .append("g")
                     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-
-      svg.append("g")
-                    .attr("class", "x axis")
-                    .attr("transform", "translate(0," + height + ")")
-                    .call(xAxisFunction)
-                    .selectAll("text")
-                    .attr("y", 0)
-                    .attr("x", 9)
-                    .attr("dy", ".35em")
-                    .attr("transform", "translate(0,23), rotate(-45)");
-
-      svg.append("g")
-                    .attr("class", "y axis")
-                    .call(yAxisFunction);
-
   }
 
-  componentDidMount(){
-    this.addAxes()
-      }
+  componentDidUpdate(){
+        this.addAxes()
+
+            let childrenOfX = document.getElementById('xaxis').childNodes;
+            for(let i=0; i<childrenOfX.length; i++) {
+              let grandChildrenOfX = childrenOfX[i].childNodes;
+                 for(let j=0; j<grandChildrenOfX.length; j++){
+                   if(grandChildrenOfX[j].tagName === 'text'){
+                      grandChildrenOfX[j].setAttribute("transform", "translate(-10,5), rotate(-45)")
+
+                }
+               }
+             }
+          }
+
 
   render() {
     let { selectedCrop, selectedCounty, countyData, title, xMetric, yMetric, dataset } = this.props
     dataset = dataset.map( (d, index) => {
       return {x: d[xMetric], y: d[yMetric]}
     })
-    //console.info("here is the generated dataset, which produces a tilted graph:")
-    //console.table(dataset)
-    //console.info("here is nathan's hardcoded dataset, which produces a prefectly fine graph:")
-    //console.table(hardDataset)
     let margin = {
             top: 30,
             right: 100,
@@ -105,19 +104,6 @@ export default class LineChartD3 extends React.Component {
     let yScale = d3.scale.linear()
         .domain([0, yMax ])
         .range([height, 0]);
-
-
-
-    let axisNodes = dataset.map( (d, index) => {
-      return(
-          <g class="tick" transform="translate(${calculatedValue[{index]})" style="opacity: 1;">
-                <line y2="-340" x2="0"></line>
-                <text dy=".35em" y="0" x="9" transform="translate(0,23), rotate(-45)" style="text-anchor: middle;">
-                    {d.x}
-                </text>
-          </g>
-        )
-    })
 
     let lineFunction = d3.svg.line()
         .interpolate("cardinal")
@@ -170,9 +156,9 @@ export default class LineChartD3 extends React.Component {
       return(
       <div key={"tip" + arrayOfThisKey[index]} class="d3-tip n" id={"tip" + arrayOfThisKey[index]}
                         style={{color: "white", fontWeight: "200", fontSize:"1.4em", background: "#D6CD1E",
-                        border: "solid black 1px", padding: "15px", borderRadius: "80%", position: 'absolute',
-                        opacity: '0', pointerEvents: 'none', minHeight: "10px", top: `${topPosition + 1900}px`, left: `${leftPosition + 200}px`}}>
-        {d.y}
+                        border: "solid white 1px", padding: "15px", position: 'absolute',
+                        opacity: '0', pointerEvents: 'none', minHeight: "10px", top: `${topPosition + 50}px`, left: `${leftPosition + 30}px`}}>
+        {d.y} {yMetric === 'harvested_acres' ? 'harvested acres' : 'dollars'}
       </div>
       )
     })
@@ -182,10 +168,8 @@ export default class LineChartD3 extends React.Component {
         <svg id={`mySVG${title.length}`} className="line-chart" width={width + 150} height={height + 100}>
         <g transform="translate(100,30)">
           <rect width={width} height={height} fill="#f2f0df"></rect>
-          <g className="y axis">
-          </g>
-          <g className="x axis">
-          </g>
+          <g className="y axis" ref="yaxis"></g>
+          <g className="x axis" id="xaxis" ref="xaxis" transform={`translate(0,${height})`}></g>
           <path className="line" d={lineCalc}></path>
           <path className="area" d={areaCalc}></path>
           {circleNodes}
