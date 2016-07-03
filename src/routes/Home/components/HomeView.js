@@ -14,30 +14,32 @@ import MapSortButtons from 'components/MapSortButtons/MapSortButtons'
 import MapSortLegend from 'components/MapSortLegend/MapSortLegend'
 import { connect } from 'react-redux'
 
+const API_URL = "http://ec2-54-200-245-70.us-west-2.compute.amazonaws.com:8000"
+
 class HomeView extends React.Component {
   componentWillMount(){
-    d3.json(`http://ec2-54-149-118-93.us-west-2.compute.amazonaws.com:8000/table/commodity_area/?county=Multnomah`, (d) =>
+    d3.json(`${API_URL}/table/commodity_area/?county=Multnomah`, (d) =>
           {
                   let rawData = d.data.sort(function(a, b) {
                       return b.acres - a.acres;
                   })
                   this.props.putCountyCommodityAcreDataInState(rawData)
           })
-          d3.json(`http://ec2-54-149-118-93.us-west-2.compute.amazonaws.com:8000/data/oain_harvest_acres/?fips=41051&year=2010`, (d) =>
+          d3.json(`${API_URL}/data/oain_harvest_acres/?fips=41051&year=2010`, (d) =>
                       {
                               let rawData = d.data.sort(function(a, b) {
                                   return b.harvested_acres - a.harvested_acres;
                               })
                               this.props.putCountyCommodityHarvestDataInState(rawData)
                       })
-        d3.json(`http://ec2-54-149-118-93.us-west-2.compute.amazonaws.com:8000/table/oregon_exports_timeline/?commodity=Alfalfa%20Seeds%20Of%20A%20Kind%20Used%20For%20Sowing`, (d) =>
+        d3.json(`${API_URL}/table/oregon_exports_timeline/?commodity=Alfalfa%20Seeds%20Of%20A%20Kind%20Used%20For%20Sowing`, (d) =>
                       {
                               let rawData = d.data.sort(function(a, b) {
                                   return b.year - a.year;
                               })
                               this.props.populateExportLineChart(rawData)
                       })
-    d3.json(`http://ec2-54-149-118-93.us-west-2.compute.amazonaws.com:8000/data/oain_harvest_acres/?fips=41051&commodity=Wheat`, (d) =>
+    d3.json(`${API_URL}/data/oain_harvest_acres/?fips=41051&commodity=Wheat`, (d) =>
                     {
                             let rawData = d.data.sort(function(a, b) {
                                 return b.year - a.year;
@@ -45,7 +47,7 @@ class HomeView extends React.Component {
                             this.props.putCountyCommodityHarvestHistoryInState(rawData)
                         })
 
-    d3.json(`http://ec2-54-149-118-93.us-west-2.compute.amazonaws.com:8000/data/subsidy_dollars/?county=Multnomah&year=2010`, (d) =>
+    d3.json(`${API_URL}/data/subsidy_dollars/?county=Multnomah&year=2010`, (d) =>
                 {
                     let rawData = d.data.sort(function(a, b) {
                         return b.subsidy_dollars - a.subsidy_dollars;
@@ -53,7 +55,7 @@ class HomeView extends React.Component {
                     this.props.putCountySubsidyDataInState(rawData)
                         })
 
-    d3.json('http://ec2-54-149-118-93.us-west-2.compute.amazonaws.com:8000/data/oain_harvest_acres/?fips=41051', (d) =>
+    d3.json(`${API_URL}/data/oain_harvest_acres/?fips=41051`, (d) =>
           {
                   let rawData = d.data.map( (item) => {
                     return item.commodity
@@ -68,28 +70,28 @@ class HomeView extends React.Component {
                   })
 
 
-              d3.json('http://ec2-54-149-118-93.us-west-2.compute.amazonaws.com:8000/table/county_stats/', (d) =>
+              d3.json(`${API_URL}/table/county_stats/`, (d) =>
                     {
                             let rawData = d.data.map( (item) => {
                               return item
                             })
                             this.props.putCountyListInState(rawData)
                             })
-            d3.json('http://ec2-54-149-118-93.us-west-2.compute.amazonaws.com:8000/table/oregon_export_commodities/', (d) =>
+            d3.json(`${API_URL}/table/oregon_export_commodities/`, (d) =>
                   {
                       let rawData = d.data.map( (item) => {
                           return item
                           })
                           this.props.fetchAllPossibleCrops(rawData)
                           })
-            d3.json('http://ec2-54-149-118-93.us-west-2.compute.amazonaws.com:8000/data/crop_diversity/', (d) =>
+            d3.json(`${API_URL}/data/crop_diversity/`, (d) =>
                     {
 
                             this.props.fetchDiversityList(d)
                             })
 
 
-              d3.json('http://ec2-54-149-118-93.us-west-2.compute.amazonaws.com:8000/table/oregon_exports_top5crops/', (d) =>
+              d3.json(`${API_URL}/table/oregon_exports_top5crops/`, (d) =>
                       {
                         let rawData = d.data.map( (item) => {
                             return item
@@ -98,7 +100,7 @@ class HomeView extends React.Component {
                             this.props.fetchTop5Exports(rawData)
                             })
 
-            d3.json(`http://ec2-54-149-118-93.us-west-2.compute.amazonaws.com:8000/table/production_and_revenue/`, (d) =>
+            d3.json(`${API_URL}/table/production_and_revenue/`, (d) =>
                               {
 
                                     this.props.addRevenue(d)
@@ -126,21 +128,21 @@ class HomeView extends React.Component {
       putOneCropInState(crop)
       let thing = county
 
-      d3.json(`http://ec2-54-149-118-93.us-west-2.compute.amazonaws.com:8000/table/commodity_area/?county=${thing.name}`, (d) =>
+      d3.json(`${API_URL}/table/commodity_area/?county=${thing.name}`, (d) =>
             {
                     let rawData = d.data.sort(function(a, b) {
                         return b.acres - a.acres;
                     })
                     this.props.putCountyCommodityAcreDataInState(rawData)
             })
-      d3.json(`http://ec2-54-149-118-93.us-west-2.compute.amazonaws.com:8000/data/oain_harvest_acres/?fips=${thing.fips}&year=${selectedYear}`, (d) =>
+      d3.json(`${API_URL}/data/oain_harvest_acres/?fips=${thing.fips}&year=${selectedYear}`, (d) =>
                   {
                           let rawData = d.data.sort(function(a, b) {
                               return b.harvested_acres - a.harvested_acres;
                           })
                           this.props.putCountyCommodityHarvestDataInState(rawData)
                   })
-      d3.json(`http://ec2-54-149-118-93.us-west-2.compute.amazonaws.com:8000/data/oain_harvest_acres/?fips=${thing.fips}&commodity=${crop}`, (d) =>
+      d3.json(`${API_URL}/data/oain_harvest_acres/?fips=${thing.fips}&commodity=${crop}`, (d) =>
                       {
                               let rawData = d.data.sort(function(a, b) {
                                   return b.year - a.year;
@@ -148,7 +150,7 @@ class HomeView extends React.Component {
                               this.props.putCountyCommodityHarvestHistoryInState(rawData)
                           })
 
-      d3.json(`http://ec2-54-149-118-93.us-west-2.compute.amazonaws.com:8000/data/subsidy_dollars/?county=${thing.name}&year=${selectedYear}`, (d) =>
+      d3.json(`${API_URL}/data/subsidy_dollars/?county=${thing.name}&year=${selectedYear}`, (d) =>
                   {
                       let rawData = d.data.sort(function(a, b) {
                           return b.subsidy_dollars - a.subsidy_dollars;
@@ -156,7 +158,7 @@ class HomeView extends React.Component {
                       this.props.putCountySubsidyDataInState(rawData)
                           })
 
-        d3.json(`http://ec2-54-149-118-93.us-west-2.compute.amazonaws.com:8000/data/oain_harvest_acres/?fips=${thing.fips}`, (d) =>
+        d3.json(`${API_URL}/data/oain_harvest_acres/?fips=${thing.fips}`, (d) =>
                     {
                                 let rawData = d.data.map( (item) => {
                                   return item.commodity
@@ -176,7 +178,7 @@ class HomeView extends React.Component {
 
 const changeExportChart = (crop) => {
   this.props.handleExportClick(crop)
-  d3.json(`http://ec2-54-149-118-93.us-west-2.compute.amazonaws.com:8000/table/oregon_exports_timeline/?commodity=${crop}`, (d) =>
+  d3.json(`${API_URL}/table/oregon_exports_timeline/?commodity=${crop}`, (d) =>
                 {
                         let rawData = d.data.sort(function(a, b) {
                             return b.year - a.year;

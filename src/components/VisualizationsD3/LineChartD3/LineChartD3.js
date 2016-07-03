@@ -65,13 +65,11 @@ export default class LineChartD3 extends React.Component {
         this.addAxes()
 
             let childrenOfX = document.getElementById('xaxis').childNodes;
-            console.log(childrenOfX)
             for(let i=0; i<childrenOfX.length; i++) {
               let grandChildrenOfX = childrenOfX[i].childNodes;
                  for(let j=0; j<grandChildrenOfX.length; j++){
                    if(grandChildrenOfX[j].tagName === 'text'){
                       grandChildrenOfX[j].setAttribute("transform", "translate(-10,5), rotate(-45)")
-                      console.log(grandChildrenOfX[j])
 
                 }
                }
