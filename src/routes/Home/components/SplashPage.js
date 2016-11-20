@@ -25,14 +25,14 @@ We're using open data to bring transparency to the factors that shape our food s
         <div className="col-md-offset-2 col-md-8" style={{padding: "1em", border: "5px white solid", borderTopStyle: "hidden",  height: "35%", borderRadius: "3px", zIndex: '5', textAlign: "center"}}>
           <div className="col-md-6">
                 <div className="col-md-offset-2 col-md-7" style={{minHeight: "100px", marginBottom: "5%", padding: "10px", border: "2px white solid", borderRadius: "3px", height: "15%", opacity: ".9", background:"#A1C02A"}}>
-                <span onClick={toggleJournalism}><a><p style={{fontSize: "1.7em", color: 'white', textDecoration: 'none !important'}}>
+                <span onClick={toggleJournalism}><a><p style={{fontSize: "1.7em", cursor: 'pointer', color: 'white', textDecoration: 'none !important'}}>
                 READ A HOMEGROWN STORY</p></a></span>
                 </div>
           </div>
           <div className="col-md-6">
                 <div className="col-md-offset-2 col-md-7" style={{minHeight: "100px", marginBottom: "5%", padding: "10px", border: "2px white solid", borderRadius: "3px", height: "15%", opacity: ".9", background:"#A1C02A"}}>
                 <span> <Link to='data'>
-                <p style={{fontSize: "1.7em", color: 'white', textDecoration: 'none !important'}}>DIG INTO THE DATA</p>
+                <p style={{cursor: 'pointer', fontSize: "1.7em", color: 'white', textDecoration: 'none !important'}}>DIG INTO THE DATA</p>
                 </Link></span>
                 </div>
           </div>

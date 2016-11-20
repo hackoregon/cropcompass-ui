@@ -28,7 +28,7 @@ export default class ImportExport extends React.Component{
     }
     let allCropNamesEverNodes = this.props.allPossibleCrops.map( (crop,index) => {
       return(
-        <div onClick={this.handleClick.bind(this, crop)} style={{display: "inline-block", padding: "5px", margin: "5px", background: "#87B725", border: "1px solid #E1D837", borderRadius: "5px"}} key={crop}>{crop}</div>
+        <div onClick={this.handleClick.bind(this, crop)} style={{display: "inline-block", cursor: 'pointer', padding: "5px", margin: "5px", background: "#87B725", border: "1px solid #E1D837", borderRadius: "5px"}} key={crop}>{crop}</div>
       )
     })
     let {handleShowHugeCropList, handleShowSources, showSources, showHugeCropList} = this.props
@@ -61,7 +61,7 @@ export default class ImportExport extends React.Component{
               <p>Oregon exports agricultural products all over the world. 40% of products grown in Oregon are exported internationally. This graph shows the top 5 commodity agricultural products exported from Oregon.</p>
               <p>Oregon exports agricultural products all over the world. 40% of products grown in Oregon are exported internationally. This graph shows the top 5 commodity agricultural products exported from Oregon.</p>
 
-              <div onClick={handleShowHugeCropList.bind(this)}> Click here to <span style={{fontSize:"2em"}}>{showHugeCropList ? 'hide' : 'see'}</span> our huge, clickable list of all {this.props.allPossibleCrops.length} Oregon exports</div>
+              <div onClick={handleShowHugeCropList.bind(this)}> Click here to <span style={{cursor: 'pointer', fontSize:"2em"}}>{showHugeCropList ? 'hide' : 'see'}</span> our huge, clickable list of all {this.props.allPossibleCrops.length} Oregon exports</div>
               <div onClick={handleShowSources.bind(this)}> Or click to learn more about data sources for this project.</div>
 
           </div>

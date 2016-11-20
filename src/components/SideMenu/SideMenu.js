@@ -23,11 +23,11 @@ class SideMenu extends React.Component{
 
       let cropNodes = cropList.map( (crop, index) => {
 
-        return (<div style={{display: "inline-block", padding: "1%"}} key={Date.now + index} onClick={this.handleClick.bind(this, {newCounty: selectedCounty, newCrop: crop, newYear: selectedYear})}><strong>{crop}</strong></div>)
+        return (<div style={{display: "inline-block", cursor: 'pointer', padding: "1%"}} key={Date.now + index} onClick={this.handleClick.bind(this, {newCounty: selectedCounty, newCrop: crop, newYear: selectedYear})}><strong>{crop}</strong></div>)
       })
       let countyNodes = countyList.map( (county, index) => {
         return (
-          <div style={{display: "inline-block", padding: "1%"}} key={Date.now + index} onClick={this.handleClick.bind(this, {newCounty: county, newCrop: selectedCrop, newYear: selectedYear})}><strong>{county.name}</strong></div>
+          <div style={{display: "inline-block", cursor: 'pointer', padding: "1%"}} key={Date.now + index} onClick={this.handleClick.bind(this, {newCounty: county, newCrop: selectedCrop, newYear: selectedYear})}><strong>{county.name}</strong></div>
 
         )
       })

@@ -40,11 +40,11 @@ class Header extends React.Component {
           <h3 style={{flex: "2"}}><strong>Viewing</strong>: {cropName} in {selectedCounty} in {selectedYear}</h3>
           <nav>
             <ul>
-              <li onClick={this.triggerCountyMenuShow.bind(this)}><a>
+              <li  style={{cursor:'pointer'}}  onClick={this.triggerCountyMenuShow.bind(this)}><a>
                 <img src="../../icons/crop-header-icons-off-white/location-iconx2.png" alt="Location Icon" width="23" height="30" style={{marginTop: "4px"}}/>
                 <p style={{marginTop: "14px"}}>Choose County</p>
               </a></li>
-              <li onClick={this.triggerCropMenuShow.bind(this)}><a>
+              <li  style={{cursor:'pointer'}}  onClick={this.triggerCropMenuShow.bind(this)}><a>
                 <img onMouseEnter={this.triggerToggleCycleFlag.bind(this)} onMouseLeave={this.triggerToggleCycleFlag.bind(this)}
                 src={`../../icons/crop-header-icons-off-white/crop-${cropImageName}2x.png`}
                 alt="Crop Icon" width="35" height="35"/>
